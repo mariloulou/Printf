@@ -6,18 +6,22 @@
 #    By: mcassar <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 08:03:35 by mcassar           #+#    #+#              #
-#    Updated: 2017/02/28 02:30:26 by mcassar          ###   ########.fr        #
+#    Updated: 2017/03/30 17:59:49 by mcassar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libprintf.a
+NAME = libftprintf.a
 FLAGS = -Wall -Wextra -Werror
 OPTIONS = -c $(FLAGS)
-FONCTIONS =	
+FONCTIONS =	ft_printf.o\
+			ft_whattodo.o\
+			ft_whichflag.o\
 
 
 
-SRCS =		srcs/
+SRCS =		srcs/ft_printf.c\
+			srcs/ft_whattodo.c\
+			srcs/ft_whichflag.c\
 
 all: $(NAME)
 

@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_whattodo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/28 18:23:06 by mcassar           #+#    #+#             */
-/*   Updated: 2017/03/30 18:04:37 by mcassar          ###   ########.fr       */
+/*   Created: 2017/03/28 19:20:32 by mcassar           #+#    #+#             */
+/*   Updated: 2017/03/30 18:55:03 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINT_H
-# define LIBFTPRINT_H
-# include "../libft/includes/libft.h"
+#include <stdio.h>
+#include "../includes/libftprintf.h"
 
-char	*ft_whattodo(char *format);
-char	*ft_whichflag(char *format);
+char *ft_whattodo(char *format)
+{
+	char *flag;
 
-int		ft_printf(const char *format, ...);
+	flag = ft_whichflag(format);
+	printf("FLAG DETECTED ===> %s", flag);
+	if (flag[0] == 's')
+	{
 
-
-#endif
+	}
+	return(0);
+}
