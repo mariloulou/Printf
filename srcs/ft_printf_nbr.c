@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str.c                                    :+:      :+:    :+:   */
+/*   ft_printf_nbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/28 18:42:13 by mcassar           #+#    #+#             */
-/*   Updated: 2017/04/19 13:49:34 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/01 05:09:36 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/01 05:11:12 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-void	ft_printf_str(void)
+void	ft_printf_nbr(void)
 {
-	ft_putstr(t_v.str);
+	ft_putnbr(t_v.strd);
 }

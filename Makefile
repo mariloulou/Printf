@@ -6,7 +6,7 @@
 #    By: mcassar <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 08:03:35 by mcassar           #+#    #+#              #
-#    Updated: 2017/03/30 17:59:49 by mcassar          ###   ########.fr        #
+#    Updated: 2017/05/03 03:47:32 by mcassar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,24 @@ NAME = libftprintf.a
 FLAGS = -Wall -Wextra -Werror
 OPTIONS = -c $(FLAGS)
 FONCTIONS =	ft_printf.o\
+			ft_bitoi.o\
+			ft_itoa_base.o\
+			ft_printf_address.o\
+			ft_printf_nbr.o\
+			ft_printf_str.o\
+			ft_printf_C.o\
 			ft_whattodo.o\
 			ft_whichflag.o\
 
 
 
 SRCS =		srcs/ft_printf.c\
+			srcs/ft_bitoi.c\
+			srcs/ft_itoa_base.c\
+			srcs/ft_printf_address.c\
+			srcs/ft_printf_nbr.c\
+			srcs/ft_printf_str.c\
+			srcs/ft_printf_C.c\
 			srcs/ft_whattodo.c\
 			srcs/ft_whichflag.c\
 

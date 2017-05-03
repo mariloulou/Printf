@@ -6,23 +6,37 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 19:22:16 by mcassar           #+#    #+#             */
-/*   Updated: 2017/03/30 18:54:38 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/02 23:57:06 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "../includes/libftprintf.h"
 
-char *ft_whichflag(char *format)
+void	ft_whichflag(char *format)
 {
-	char *flag;
-
-	flag = NULL;
-	if (format[1] == 's')
+	if (format[1] == 'C')
 	{
-		flag = (char *)malloc(sizeof(char) * 1 + 1);;
-		flag = "s";
+		t_v.flag = ft_strnew(2);
+		t_v.flag = "C";
 	}
-	return(flag);
+	else if (format[1] == 's')
+	{
+		t_v.flag = ft_strnew(2);
+		t_v.flag = "s";
+	}
+	else if (format[1] == 'p')
+	{
+		t_v.flag = ft_strnew(2);
+		t_v.flag = "p";
+	}
+	else if (format[1] == 'x')
+	{
+		t_v.flag = ft_strnew(2);
+		t_v.flag = "x";
+	}
+	else if (format[1] == 'd')
+	{
+		t_v.flag = ft_strnew(2);
+		t_v.flag = "d";
+	}
 }
