@@ -6,7 +6,7 @@
 /*   By: mcassar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 11:11:26 by mcassar           #+#    #+#             */
-/*   Updated: 2017/02/23 11:06:51 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/04 00:13:44 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 
+void			ft_bitoi(char **tab, int nb);
 void			ft_bzero(void *s, size_t n);
 void			ft_memdel(void **ap);
 void			ft_putchar(char c);
@@ -54,6 +55,7 @@ char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *big, const char *little);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strtrim(char const *s);
+char			*ft_itoa_base(int nb, int base);
 
 char			**ft_strsplit(char const *s, char c);
 

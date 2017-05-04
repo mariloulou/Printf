@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str.c                                    :+:      :+:    :+:   */
+/*   ft_printf_s_maj.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/28 18:42:13 by mcassar           #+#    #+#             */
-/*   Updated: 2017/04/19 13:49:34 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/04 03:49:21 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/04 04:13:44 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-void	ft_printf_str(void)
+/*
+**	ft_printf_s_maj is used to treat the S flag. It just calls repeatidly
+**	ft_printf_c_maj, printing each character one by one. Treated as s flag
+**	with the l (ell) modifier.
+**		Var. int i = Pointer going through t_v.cmaj.
+*/
+
+void	ft_printf_s_maj(void)
 {
-	ft_putstr(t_v.str);
+	int i;
+
+	i = 0;
+	while (t_v.smaj[i])
+	{
+		t_v.cmaj = t_v.smaj[i];
+		ft_printf_c_maj();
+		i++;
+	}
+	return ;
 }

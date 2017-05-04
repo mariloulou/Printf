@@ -6,11 +6,11 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/03 03:09:36 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/03 04:12:37 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/04 00:36:53 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftprintf.h"
+#include "../includes/libft.h"
 
 int	find_nb(char *bit)
 {

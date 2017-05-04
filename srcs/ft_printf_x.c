@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printf_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcassar <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 09:44:45 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/03 23:51:19 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/04 03:09:10 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/04 04:20:35 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/libftprintf.h"
 
-void		ft_putstr(char const *s)
+/*
+**ft_printf_x treats the x flag.
+**It converts the givent int parameter into its hexadecimal value.
+*/
+
+void	ft_printf_x(void)
 {
-	int i;
+	char *hexa;
 
-	i = 0;
-	if (s == NULL)
-		return ;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	hexa = ft_itoa_base(t_v.x, 16);
+	ft_putstr(hexa);
+	return ;
 }

@@ -6,11 +6,11 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 23:50:47 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/03 00:41:46 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/03 23:51:17 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftprintf.h"
+#include "../includes/libft.h"
 
 static int	malloc_size(int nb, int base)
 {

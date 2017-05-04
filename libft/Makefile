@@ -6,7 +6,7 @@
 #    By: mcassar <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 08:03:35 by mcassar           #+#    #+#              #
-#    Updated: 2017/02/28 01:52:54 by mcassar          ###   ########.fr        #
+#    Updated: 2017/05/04 00:13:17 by mcassar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
 OPTIONS = -c $(FLAGS)
 FONCTIONS =	ft_atoi.o \
+			ft_bitoi.o \
 			ft_bzero.o \
 			ft_isalnum.o\
 			ft_isalpha.o \
@@ -21,6 +22,7 @@ FONCTIONS =	ft_atoi.o \
 			ft_isdigit.o \
 			ft_isprint.o \
 			ft_itoa.o \
+			ft_itoa_base.o\
 			ft_memalloc.o \
 			ft_memccpy.o \
 			ft_memchr.o \
@@ -71,6 +73,7 @@ FONCTIONS =	ft_atoi.o \
 
 
 SRCS =		srcs/ft_atoi.c \
+			srcs/ft_bitoi.c \
 			srcs/ft_bzero.c \
 			srcs/ft_isalnum.c \
 			srcs/ft_isalpha.c \
@@ -78,6 +81,7 @@ SRCS =		srcs/ft_atoi.c \
 			srcs/ft_isdigit.c \
 			srcs/ft_isprint.c \
 			srcs/ft_itoa.c \
+			srcs/ft_itoa_base.c \
 			srcs/ft_memalloc.c \
 			srcs/ft_memccpy.c \
 			srcs/ft_memchr.c \

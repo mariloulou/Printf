@@ -6,7 +6,7 @@
 /*   By: mcassar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 11:26:27 by mcassar           #+#    #+#             */
-/*   Updated: 2016/11/19 14:09:13 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/04 03:04:57 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ static void	ft_putstr(char *str)
 void		ft_putnbr(int n)
 {
 	if (n == -2147483648)
+	{
 		ft_putstr("-2147483648");
+		return ;
+	}
 	if (n < 0)
 	{
 		n = -n;

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printf_d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcassar <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 09:44:45 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/03 23:51:19 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/04 00:05:47 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/04 04:16:08 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/libftprintf.h"
 
-void		ft_putstr(char const *s)
+/*
+**	ft_printf_d treats the d flag. It is used to write the given int parameter.
+*/
+
+void	ft_printf_d(void)
 {
-	int i;
-
-	i = 0;
-	if (s == NULL)
-		return ;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	ft_putnbr(t_v.d);
+	return ;
 }

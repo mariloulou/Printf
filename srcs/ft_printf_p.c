@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_address.c                                :+:      :+:    :+:   */
+/*   ft_printf_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/05 18:55:01 by mcassar           #+#    #+#             */
-/*   Updated: 2017/04/24 01:34:09 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/04 00:16:12 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/04 04:21:15 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-static int	malloc_size(unsigned long int nb)
+/*
+**	ft_malloc_size returns the righ malloc size used in ft_printf_hexa.
+**		Var. int i = Return value.
+*/
+
+static int	ft_malloc_size(unsigned long int nb)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (nb > 0)
@@ -25,18 +30,26 @@ static int	malloc_size(unsigned long int nb)
 	return (i);
 }
 
+/*
+**	ft_printf_hexa converts a given 10 based unsigned long int into its
+**	hexadecimal value.
+**		Var. int index		= Pointer going through char *hex.
+**		Var. char *hex		= String containing hexadecimal values.
+**		Var. char *result	= String containing the result of the
+**								hexadecimal convertion.
+**		Var. int i			= Pointer going through char *result.
+*/
+
 static int	ft_printf_hexa(unsigned long int nb)
 {
 	int		index;
 	char	*hex;
 	char	*result;
 	int		i;
-	int		ms;
 
 	hex = "0123456789abcdef";
-	ms = malloc_size(nb);
 	i = 0;
-	result = (char*)malloc(sizeof(char*) * ms + 1);
+	result = (char*)malloc(sizeof(char*) * ft_malloc_size(nb) + 1);
 	while (nb > 0)
 	{
 		index = nb % 16;
@@ -52,11 +65,14 @@ static int	ft_printf_hexa(unsigned long int nb)
 	return (0);
 }
 
-void	ft_printf_address(void *nb)
+/*
+**	ft_printf_p treat the p flag, used to print pointer addresses.
+**	It prints in hexadecimal the void *pointer argument.
+*/
+
+void		ft_printf_p(void)
 {
 	ft_putstr("0x");
-	ft_printf_hexa((unsigned long int) nb);
+	ft_printf_hexa((unsigned long int)t_v.p);
 	return ;
 }
-
-
