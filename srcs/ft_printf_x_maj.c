@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_d.c                                      :+:      :+:    :+:   */
+/*   ft_printf_x_maj.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/04 00:05:47 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/14 23:59:54 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/12 23:45:24 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/14 23:11:07 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-/*
-**	ft_printf_d treats the d flag. It is used to write the given int parameter.
-*/
-
-void	ft_printf_d(void)
+static void	ft_hash(void)
 {
-	ft_putnbr(t_v.d);
+	ft_putstr("0X");
+	return ;
+}
+
+void		ft_printf_x_maj(void)
+{
+	int		i;
+	char	*str;
+
+	i = 0;
+	str = (ft_u_itoa(t_v.xmaj, 16));
+	if (ft_strfind(t_v.params, '#') == 1)
+		ft_hash();
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
+		i++;
+	}
+	ft_putstr(str);
 	return ;
 }

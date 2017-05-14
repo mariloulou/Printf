@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_d.c                                      :+:      :+:    :+:   */
+/*   printf_u_maj.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/04 00:05:47 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/14 23:59:54 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/12 23:33:13 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/15 00:06:58 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-/*
-**	ft_printf_d treats the d flag. It is used to write the given int parameter.
-*/
-
-void	ft_printf_d(void)
+void	ft_printf_u_maj(void)
 {
-	ft_putnbr(t_v.d);
+	ft_putstr(ft_u_itoa(t_v.umaj, 10));
 	return ;
 }

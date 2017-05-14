@@ -6,7 +6,7 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 00:16:12 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/04 04:21:15 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/15 00:33:46 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ static int	ft_printf_hexa(unsigned long int nb)
 		ft_putchar(result[i]);
 		i--;
 	}
+	free(result);
 	return (0);
 }
 

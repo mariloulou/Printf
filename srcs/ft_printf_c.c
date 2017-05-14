@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_d.c                                      :+:      :+:    :+:   */
+/*   ft_printf_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/04 00:05:47 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/14 23:59:54 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/12 04:58:38 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/12 05:07:12 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-/*
-**	ft_printf_d treats the d flag. It is used to write the given int parameter.
-*/
-
-void	ft_printf_d(void)
+void	ft_printf_c(void)
 {
-	ft_putnbr(t_v.d);
+	ft_putchar(t_v.c);
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 18:56:21 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/04 04:27:21 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/15 01:34:28 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,23 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list list;
-
+	char *formatch;
 	t_v.i = 0;
 	va_start(list, format);
-	t_v.flag = (char *)format;
+	formatch = (char*)format;
 	while (format[t_v.i])
 	{
 		if (format[t_v.i] == '%')
-			ft_whattodo(t_v.flag + t_v.i, list);
-		t_v.i++;
+		{
+			ft_whattodo(formatch + t_v.i, list);
+			free(t_v.params);
+			t_v.i = t_v.i + ft_strlen(t_v.flag) + 1;
+		}
+		else
+		{
+			ft_putchar(format[t_v.i]);
+			t_v.i++;
+		}
 	}
 	return (0);
 }

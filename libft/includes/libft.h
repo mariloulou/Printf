@@ -6,7 +6,7 @@
 /*   By: mcassar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 11:11:26 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/04 00:13:44 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/14 21:48:04 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 
-char			*ft_itoa(int n);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strcpy(char *dst, const char *src);
@@ -56,7 +55,7 @@ char			*ft_strstr(const char *big, const char *little);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strtrim(char const *s);
 char			*ft_itoa_base(int nb, int base);
-
+char			*ft_u_itoa(int nbr, int base);
 char			**ft_strsplit(char const *s, char c);
 
 int				ft_atoi(const char *str);
@@ -70,6 +69,7 @@ int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(const char *s1, const char *s2, size_t n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_strfind(char *str, char c);
 int				ft_tl(char **tab);
 int				ft_tolower(int c);
 int				ft_toupper(int c);

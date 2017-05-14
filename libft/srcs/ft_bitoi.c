@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/03 03:09:36 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/04 00:36:53 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/12 02:48:12 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/14 22:58:47 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	find_nb(char *bit)
+int		find_nb(char *bit)
 {
 	int tab[8];
 	int i;
@@ -34,7 +34,7 @@ int	find_nb(char *bit)
 			ret = ret + tab[i];
 		i++;
 	}
-	return(ret);
+	return (ret);
 }
 
 void	uni_write(int *tab, int nb)
@@ -59,10 +59,10 @@ void	uni_write(int *tab, int nb)
 		write(1, &(tab[2]), 1);
 		write(1, &(tab[3]), 1);
 	}
-	return;
+	return ;
 }
 
-void ft_bitoi(char **tab, int nb)
+void	ft_bitoi(char **tab, int nb)
 {
 	int i;
 	int tabret[nb];

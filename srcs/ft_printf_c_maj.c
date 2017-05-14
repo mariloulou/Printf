@@ -6,7 +6,7 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 01:40:07 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/04 04:10:21 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/14 22:58:13 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ static char	*ft_fill_mask(int m, char *bin)
 	tab[2] = "1110xxxx10xxxxxx10xxxxxx\0";
 	tab[3] = "11110xxx10xxxxxx10xxxxxx10xxxxxx\0";
 	mask = ft_strdup(tab[m]);
+	free(tab);
 	i = (ft_strlen(bin) - 1);
 	j = (ft_strlen(mask) - 1);
 	while (i >= 0)
@@ -129,6 +130,8 @@ static char	**ft_split_bytes(char *bytes, int nb)
 **	The potencially multi_byte sequence is written.
 **		Var. char *bin	= Binary number.
 **		Var. int m		= Right-sized mask.
+**	TA = Get info on what printf should do if setlocale value isn't defined.
+**	TA = Printf return value should be -1
 */
 
 void		ft_printf_c_maj(void)
@@ -136,12 +139,8 @@ void		ft_printf_c_maj(void)
 	char	*bin;
 	int		m;
 
-	//TA = Get info on what printf should do if setlocale value isn't defined.
 	if (t_v.cmaj >= 55296 && t_v.cmaj <= 57343)
-	{
-	// TA = Printf return value should be -1
 		return ;
-	}
 	bin = ft_itoa_base(t_v.cmaj, 2);
 	m = ft_whichmask(ft_strlen(bin));
 	bin = ft_fill_mask(m, bin);

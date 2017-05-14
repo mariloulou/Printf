@@ -6,7 +6,7 @@
 #    By: mcassar <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 08:03:35 by mcassar           #+#    #+#              #
-#    Updated: 2017/05/04 00:13:17 by mcassar          ###   ########.fr        #
+#    Updated: 2017/05/14 21:49:00 by mcassar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ FONCTIONS =	ft_atoi.o \
 			ft_isascii.o \
 			ft_isdigit.o \
 			ft_isprint.o \
-			ft_itoa.o \
 			ft_itoa_base.o\
 			ft_memalloc.o \
 			ft_memccpy.o \
@@ -47,6 +46,7 @@ FONCTIONS =	ft_atoi.o \
 			ft_strdel.o \
 			ft_strdup.o \
 			ft_strequ.o \
+			ft_strfind.o\
 			ft_striter.o \
 			ft_striteri.o \
 			ft_strjoin.o \
@@ -68,6 +68,7 @@ FONCTIONS =	ft_atoi.o \
 			ft_tl.o \
 			ft_tolower.o \
 			ft_toupper.o \
+			ft_u_itoa.o 
 
 
 
@@ -80,7 +81,6 @@ SRCS =		srcs/ft_atoi.c \
 			srcs/ft_isascii.c \
 			srcs/ft_isdigit.c \
 			srcs/ft_isprint.c \
-			srcs/ft_itoa.c \
 			srcs/ft_itoa_base.c \
 			srcs/ft_memalloc.c \
 			srcs/ft_memccpy.c \
@@ -106,6 +106,7 @@ SRCS =		srcs/ft_atoi.c \
 			srcs/ft_strdel.c \
 			srcs/ft_strdup.c \
 			srcs/ft_strequ.c \
+			srcs/ft_strfind.c \
 			srcs/ft_striter.c \
 			srcs/ft_striteri.c \
 			srcs/ft_strjoin.c \
@@ -127,100 +128,22 @@ SRCS =		srcs/ft_atoi.c \
 			srcs/ft_tl.c \
 			srcs/ft_tolower.c \
 			srcs/ft_toupper.c \
+			srcs/ft_u_itoa.c 
+
+OBJS = $(addprefix objects/, $(FONCTIONS))
 
 all: $(NAME)
 
 $(NAME):
-	@printf "\x1b[32mObject files creation"
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m\n"
 	@gcc $(OPTIONS) $(SRCS)
-	@sleep 0.6
-	@printf "\x1b[32mStuff is processing"
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m\n"
 	@ar rc $(NAME) $(FONCTIONS)
-	@sleep 0.6
-	@printf "\x1b[32mLibft.a file is being created"
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@printf "\x1b[32m\n"
 	@ranlib $(NAME)
-	@sleep 0.6
-	@printf "\x1b[32mObject folder is being created"
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@printf "\x1b[32m\n"
-	@mkdir objects
-	@sleep 0.6
-	@printf "\x1b[32mObject file are being redricted in the object folder"
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@printf "\x1b[32m\n"
 	@mv $(FONCTIONS) objects/
-	@sleep 0.6
-	@printf "\x1b[32mMake"
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m\n"
-	@printf "\x1b[32mDone!"
-	@printf "\x1b[32m\n"
 
 clean:
-	@printf "\x1b[32mObject files are being removed"
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m\n"
-	@rm -rf objects/
-	@printf "\x1b[32mDone!"
-	@printf "\x1b[32m\n"
+	@rm -rf $(OBJS)
 fclean: clean
-	@printf "\x1b[32mLibft.a file is being removed"
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m."
-	@sleep 0.2
-	@printf "\x1b[32m\n"
-	@/bin/rm -f $(NAME)
-	@printf "\x1b[32mDone!"
-	@printf "\x1b[32m\n"
+	@rm -f $(NAME)
 
 re: fclean all
 
