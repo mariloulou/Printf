@@ -6,7 +6,7 @@
 #    By: mcassar <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 08:03:35 by mcassar           #+#    #+#              #
-#    Updated: 2017/05/14 21:49:00 by mcassar          ###   ########.fr        #
+#    Updated: 2017/05/17 21:36:22 by mcassar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,7 @@ FONCTIONS =	ft_atoi.o \
 			ft_strstr.o \
 			ft_strsub.o \
 			ft_strtrim.o \
+			ft_str_rev.o \
 			ft_tl.o \
 			ft_tolower.o \
 			ft_toupper.o \
@@ -125,6 +126,7 @@ SRCS =		srcs/ft_atoi.c \
 			srcs/ft_strstr.c \
 			srcs/ft_strsub.c \
 			srcs/ft_strtrim.c \
+			srcs/ft_str_rev.c \
 			srcs/ft_tl.c \
 			srcs/ft_tolower.c \
 			srcs/ft_toupper.c \

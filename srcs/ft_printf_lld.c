@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_u_maj.c                                     :+:      :+:    :+:   */
+/*   ft_printf_lld.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/12 23:33:13 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/17 22:14:43 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/15 19:50:32 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/17 22:17:13 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-void	ft_printf_u_maj(void)
+void	ft_printf_lld(void)
 {
-	ft_putstr(ft_u_itoa(t_v.umaj, 10), 1);
 	return ;
 }

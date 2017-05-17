@@ -6,20 +6,11 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 19:22:16 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/15 01:30:22 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/17 22:44:36 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
-
-static void	ft_whichflag_maj_two(char *format)
-{
-	if (format[1] == 'U')
-		t_v.flag = ft_strdup("U");
-	else if (format[1] == 'X')
-		t_v.flag = ft_strdup("X");
-	return ;
-}
 
 static void	ft_whichflag_maj(char *format)
 {
@@ -31,17 +22,10 @@ static void	ft_whichflag_maj(char *format)
 		t_v.flag = ft_strdup("D");
 	else if (format[1] == 'O')
 		t_v.flag = ft_strdup("O");
-	ft_whichflag_maj_two(format);
-}
-
-static void	ft_whichflag_min_two(char *format)
-{
-	if (format[1] == 'o')
-		t_v.flag = ft_strdup("o");
-	else if (format[1] == 'c')
-		t_v.flag = ft_strdup("c");
-	else if (format[1] == 'u')
-		t_v.flag = ft_strdup("u");
+	else if (format[1] == 'U')
+		t_v.flag = ft_strdup("U");
+	else if (format[1] == 'X')
+		t_v.flag = ft_strdup("X");
 }
 
 static void	ft_whichflag_min(char *format)
@@ -54,7 +38,26 @@ static void	ft_whichflag_min(char *format)
 		t_v.flag = ft_strdup("s");
 	else if (format[1] == 'x')
 		t_v.flag = ft_strdup("x");
-	ft_whichflag_min_two(format);
+	else if (format[1] == 'o')
+		t_v.flag = ft_strdup("o");
+	else if (format[1] == 'c')
+		t_v.flag = ft_strdup("c");
+	else if (format[1] == 'u')
+		t_v.flag = ft_strdup("u");
+}
+
+static void	ft_whichflag_ell(char *format)
+{
+	if (format[1] == 'l' && format[2] == 'd')
+		t_v.flag = ft_strdup("ld");
+	return ;
+}
+
+static void	ft_whichflag_ell_ell(char *format)
+{
+	if (format[1] == 'l' && format[2] == 'l' && format[3] == 'd')
+		t_v.flag = ft_strdup("lld");
+	return ;
 }
 
 /*
@@ -68,8 +71,27 @@ static void	ft_whichflag_min(char *format)
 void		ft_whichflag(char *format)
 {
 	format = format + ft_strlen(t_v.params);
-	if (format[1] >= 65 && format[1] <= 90)
-		ft_whichflag_maj(format);
-	else if (format[1] >= 97 && format[1] <= 122)
-		ft_whichflag_min(format);
+	if (ft_strlen(format) >= 3 && format[1] == 'l')
+	{
+		if (format[1] == 'l' && format[2] != 'l')
+			ft_whichflag_ell(format);
+		else if (format[1] == 'l' && format[2] == 'l')
+			ft_whichflag_ell_ell(format);
+		else
+			t_v.flag = ft_strdup("Coucou");
+	}
+	else if (ft_strlen(format) < 3)
+	{
+		if (format[1] >= 65 && format[1] <= 90 && format[1] != 'l')
+			ft_whichflag_maj(format);
+		else if (format[1] >= 97 && format[1] <= 122)
+			ft_whichflag_min(format);
+		else if (format[1] == '%')
+			t_v.flag = ft_strdup("%");
+		else
+			t_v.flag = ft_strdup("coucou");
+	}
+	else
+		t_v.flag = ft_strdup("keukou");
+	return ;
 }

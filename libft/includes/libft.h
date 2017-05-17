@@ -6,7 +6,7 @@
 /*   By: mcassar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 11:11:26 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/14 21:48:04 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/17 22:11:29 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ void			ft_putendl(char const *s);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr(int n);
 void			ft_putnbr_fd(int n, int fd);
-void			ft_putstr(char const *s);
+void			ft_putstr(char *s, char dom);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_strclr(char *s);
 void			ft_strdel(char **as);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
+void			ft_str_rev(char *str);
 
 void			*ft_memalloc(size_t size);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);

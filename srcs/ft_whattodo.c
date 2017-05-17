@@ -6,53 +6,13 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/28 19:20:32 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/15 01:31:35 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/17 22:40:42 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 
-void	ft_whattodo_maj_two(va_list list)
-{
-	if (t_v.flag[0] == 'O')
-	{
-		t_v.omaj = va_arg(list, int);
-		ft_printf_o_maj();
-	}
-	else if (t_v.flag[0] == 'U')
-	{
-		t_v.umaj = va_arg(list, int);
-		ft_printf_u_maj();
-	}
-	else if (t_v.flag[0] == 'X')
-	{
-		t_v.xmaj = va_arg(list, int);
-		ft_printf_x_maj();
-	}
-	return ;
-}
-
-void	ft_whattodo_maj(va_list list)
-{
-	if (t_v.flag[0] == 'C')
-	{
-		t_v.cmaj = va_arg(list, wchar_t);
-		ft_printf_c_maj();
-	}
-	else if (t_v.flag[0] == 'S')
-	{
-		t_v.smaj = va_arg(list, wchar_t *);
-		ft_printf_s_maj();
-	}
-	else if (t_v.flag[0] == 'D')
-	{
-		t_v.dmaj = va_arg(list, int);
-		ft_printf_d_maj();
-	}
-	ft_whattodo_maj_two(list);
-}
-
-void	ft_whattodo_min_two(va_list list)
+static void	ft_whattodo_min_two(va_list list)
 {
 	if (t_v.flag[0] == 'u')
 	{
@@ -71,7 +31,7 @@ void	ft_whattodo_min_two(va_list list)
 	}
 }
 
-void	ft_whattodo_min(va_list list)
+static void	ft_whattodo_min(va_list list)
 {
 	if (t_v.flag[0] == 'd')
 	{
@@ -96,18 +56,53 @@ void	ft_whattodo_min(va_list list)
 	ft_whattodo_min_two(list);
 }
 
+static void	ft_whattodo_ell(va_list list)
+{
+	if (t_v.flag[0] == 'l' && t_v.flag[1] == 'd')
+	{
+		t_v.ld = va_arg(list, long int);
+		ft_printf_ld();
+	}
+	return ;
+}
+
+static void	ft_whattodo_ell_ell(va_list list)
+{
+	if (t_v.flag[0] == 'l' && t_v.flag[1] == 'l' && t_v.flag[2] == 'd')
+	{
+		t_v.lld = va_arg(list, long int);
+		ft_printf_lld();
+	}
+	return ;
+}
+
 /*
 **	ft_whattodo is a directing function, telling wich function should be used,
 **	depending on the flag found and provided by ft_whichflag. It's divided in
 **	sub-functions, for norm respect, and easy access.
 */
 
-void	ft_whattodo(char *format, va_list list)
+void		ft_whattodo(char *format, va_list list)
 {
 	ft_whichparam(format + 1);
 	ft_whichflag(format);
-	if (t_v.flag[0] >= 65 && t_v.flag[0] <= 90)
-		ft_whattodo_maj(list);
-	else if (t_v.flag[0] >= 97 && t_v.flag[0] <= 122)
-		ft_whattodo_min(list);
+	if (ft_strlen(t_v.flag) == 2)
+	{
+		if (t_v.flag[0] == 'l' && t_v.flag[1] != 'l')
+			ft_whattodo_ell(list);
+	}
+	else if (ft_strlen(t_v.flag) == 3)
+	{
+		if (t_v.flag[0] == 'l' && t_v.flag[1] == 'l' && t_v.flag[2] == 'd')
+			ft_whattodo_ell_ell(list);
+	}
+	else if (ft_strlen(t_v.flag) == 1)
+	{
+		if (t_v.flag[0] >= 65 && t_v.flag[0] <= 90 && t_v.flag[0] != 'l')
+			ft_whattodo_maj(list);
+		else if (t_v.flag[0] >= 97 && t_v.flag[0] <= 122 && t_v.flag[0] != 'l')
+			ft_whattodo_min(list);
+		else if (t_v.flag[0] == '%')
+			ft_putchar('%');
+	}
 }

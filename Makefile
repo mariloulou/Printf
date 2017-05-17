@@ -6,7 +6,7 @@
 #    By: mcassar <marvin42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 08:03:35 by mcassar           #+#    #+#              #
-#    Updated: 2017/05/13 01:30:32 by mcassar          ###   ########.fr        #
+#    Updated: 2017/05/17 22:30:11 by mcassar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ FONCTIONS =	ft_printf.o\
 			ft_printf_c_maj.o\
 			ft_printf_d.o\
 			ft_printf_d_maj.o\
+			ft_printf_ld.o\
+			ft_printf_lld.o\
 			ft_printf_o.o\
 			ft_printf_o_maj.o\
 			ft_printf_p.o\
@@ -28,6 +30,7 @@ FONCTIONS =	ft_printf.o\
 			ft_printf_x.o\
 			ft_printf_x_maj.o\
 			ft_whattodo.o\
+			ft_whattodo_maj.o\
 			ft_whichflag.o\
 			ft_whichparam.o
 
@@ -38,6 +41,8 @@ SRCS =		srcs/ft_printf.c\
 			srcs/ft_printf_c_maj.c\
 			srcs/ft_printf_d.c\
 			srcs/ft_printf_d_maj.c \
+			srcs/ft_printf_ld.c\
+			srcs/ft_printf_lld.c\
 			srcs/ft_printf_o.c\
 			srcs/ft_printf_o_maj.c\
 			srcs/ft_printf_p.c\
@@ -48,6 +53,7 @@ SRCS =		srcs/ft_printf.c\
 			srcs/ft_printf_x.c\
 			srcs/ft_printf_x_maj.c\
 			srcs/ft_whattodo.c\
+			srcs/ft_whattodo_maj.c\
 			srcs/ft_whichflag.c\
 			srcs/ft_whichparam.c
 

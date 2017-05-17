@@ -6,7 +6,7 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 00:16:35 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/04 04:17:31 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/17 22:15:18 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 
 void	ft_printf_s(void)
 {
-	ft_putstr(t_v.s);
+	ft_putstr(t_v.s, 0);
 	return ;
 }

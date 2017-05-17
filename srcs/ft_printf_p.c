@@ -6,7 +6,7 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 00:16:12 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/15 00:33:46 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/17 22:15:38 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static int	ft_printf_hexa(unsigned long int nb)
 
 void		ft_printf_p(void)
 {
-	ft_putstr("0x");
+	ft_putstr("0x", 0);
 	ft_printf_hexa((unsigned long int)t_v.p);
 	return ;
 }

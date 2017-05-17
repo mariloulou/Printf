@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_u_maj.c                                     :+:      :+:    :+:   */
+/*   ft_str_rev.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/12 23:33:13 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/17 22:14:43 by mcassar          ###   ########.fr       */
+/*   Created: 2017/05/15 20:29:40 by mcassar           #+#    #+#             */
+/*   Updated: 2017/05/17 22:22:40 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftprintf.h"
-
-void	ft_printf_u_maj(void)
+void	ft_str_rev(char *str)
 {
-	ft_putstr(ft_u_itoa(t_v.umaj, 10), 1);
-	return ;
+	char	c;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	while (str[j] != '\0')
+		j++;
+	j--;
+	while (i < j)
+	{
+		c = str[i];
+		str[i] = str[j];
+		str[j] = c;
+		i++;
+		j--;
+	}
 }

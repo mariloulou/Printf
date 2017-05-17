@@ -6,7 +6,7 @@
 /*   By: mcassar <mcassar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/12 23:45:24 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/14 23:11:07 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/17 22:12:40 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_hash(void)
 {
-	ft_putstr("0X");
+	ft_putstr("0X", 0);
 	return ;
 }
 
@@ -33,6 +33,6 @@ void		ft_printf_x_maj(void)
 			str[i] = str[i] - 32;
 		i++;
 	}
-	ft_putstr(str);
+	ft_putstr(str, 1);
 	return ;
 }

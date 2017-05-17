@@ -6,22 +6,15 @@
 /*   By: mcassar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 09:44:45 by mcassar           #+#    #+#             */
-/*   Updated: 2017/05/03 23:51:19 by mcassar          ###   ########.fr       */
+/*   Updated: 2017/05/17 22:11:16 by mcassar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void		ft_putstr(char const *s)
+void		ft_putstr(char *s, char dom)
 {
-	int i;
-
-	i = 0;
-	if (s == NULL)
-		return ;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	write(1, s, ft_strlen(s));
+	if (dom == 1)
+		free(s);
 }
